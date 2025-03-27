@@ -1,7 +1,13 @@
 import React, { PureComponent } from 'react';
-// import { DatePickerIOS } from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import DateTimePicker from '@huyennguyentt/my-datetimepicker';
 import PropTypes from 'prop-types';
+
+const NativeDateTimePicker = requireNativeComponent('DateTimePicker', null, {
+    nativeOnly: {
+      pickerWidth: true,
+      pickerHeight: true,
+    },
+  });
 
 export default class DatePicker extends PureComponent {
   static propTypes = {
@@ -10,6 +16,8 @@ export default class DatePicker extends PureComponent {
     minimumDate: PropTypes.instanceOf(Date),
     mode: PropTypes.oneOf(['date', 'time', 'datetime']),
     onDateChange: PropTypes.func.isRequired,
+    pickerWidth,
+    pickerHeight,  
   };
 
   static defaultProps = {
@@ -20,17 +28,19 @@ export default class DatePicker extends PureComponent {
   state = {
     date: new Date(),
   };
-
-  // @react-native-community/datetimepicker
+  
+  // @huyennguyentt/datetime-ios-picker
   //2022 use value instead of date
   //2022 use onChange instead of onDateChange (and first param not date anymore)
   render() {
     return (
-      <DateTimePicker
+      <NativeDateTimePicker
         {...this.props}
         onChange={(event, date) => this.onDateChange(date)}
         display='spinner'
         value={this.state.date}
+        pickerWidth={pickerWidth}
+        pickerHeight={pickerHeight}  
       />
     );
   }

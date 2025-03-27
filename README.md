@@ -12,7 +12,7 @@ This is not original but inspired by [react-native-wheel-datepicker](https://git
 ## Note
 
 - For Picker of iOS use [@react-native-picker/picker](https://github.com/react-native-picker/picker)
-- For DatePicker of iOS use [@react-native-community/datetimepicker](https://github.com/react-native-datetimepicker/datetimepicker) 
+- For DatePicker of iOS use [@huyennguyentt/datetime-ios-picker](https://github.com/huyennguyentt/datetime-ios-picker) 
 - For Picker and DatePicker of Android use WheelPicker of [AigeStudio](https://github.com/AigeStudio/WheelPicker)
 
 ## How to use
@@ -21,7 +21,7 @@ React Native >= 0.60+
 ```
 npm install react-native-wheel-pick --save-dev --legacy-peer-deps
 npm install @react-native-picker/picker --save-dev --legacy-peer-deps
-npm install @react-native-community/datetimepicker --save-dev --legacy-peer-deps
+npm install @huyennguyentt/datetime-ios-picker --save-dev --legacy-peer-deps
 npx pod-install
 
 npx react-native start --reset-cache // clear cache
